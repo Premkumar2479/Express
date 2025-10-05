@@ -9,11 +9,11 @@ app.listen(port, ()=>{
     console.log(`app is listening on port ${port}`);
 });
 
-app.use((req,res) =>{
-   // console.log(req);
-    console.log("request recevied");
-    res.send({
-        name:"apple",
-        color:"red",
-    });
+app.get("/",(req,res)=>{
+    res.send("hello, i am root");
+});
+
+app.get("/:username/:id",(req,res)=> {
+    console.log(req.params);
+    res.send("hello,i am root");
 });
